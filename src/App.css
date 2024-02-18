@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+.custom-shadow {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Set the bottom position */
+  width: 100%; /* Make it span the entire width of the parent element */
+  height: 3px;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.loader {
+  border: 4px solid white;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.RichTextEditor__root___2QXK- {
+  height: 70vh;
+  margin: 35px 0;
+  width: 52%;
+  overflow-y: auto;
+  position: relative;
+}
+
+ul{
+  list-style-type:disc;
+
+}
+
+li{
+  margin-left: 35px;
+}
+
+.EditorToolbar__root___3_Aqz {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background: white;
+}
+
+@media screen and (max-width: 778px) {
+  .RichTextEditor__root___2QXK- {
+    width: 100%;
+  }
+}
+
+/* Add this CSS to your stylesheets */
+.skeleton-loader {
+  /* ... (existing styles) */
+
+  /* Add a simple animation */
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.active-indicator {
+  height: 3px;
+  position: absolute;
+  border-radius: 2px;
+  bottom: 0px;
+  left: 0;
+  background-color: white;
+  /* Color of the active indicator */
+  transition: all 0.3s ease;
+  /* Animation duration and easing */
+}
