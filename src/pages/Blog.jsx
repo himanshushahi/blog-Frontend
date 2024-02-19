@@ -29,7 +29,7 @@ function Blog() {
     const getBlog = async () => {
       setOpen(false);
       const responce = await fetch(
-        `/api/get-filter-blog?query=${query}&category=${category}&page=${page}`
+        `https://blog-app-api-x1ut.onrender.com/get-filter-blog?query=${query}&category=${category}&page=${page}`
       );
       const { blogs } = await responce.json();
       setIsLoading(false);
@@ -43,7 +43,7 @@ function Blog() {
     setOpen(false);
     setIsLoading(true)
     const responce = await fetch(
-      `/api/get-filter-blog?query=${searchParams.get('query')}&category=${category}&page=${page}`
+      `https://blog-app-api-x1ut.onrender.com/get-filter-blog?query=${searchParams.get('query')}&category=${category}&page=${page}`
     );
     const { blogs } = await responce.json();
     setIsLoading(false);
@@ -52,7 +52,7 @@ function Blog() {
 
   useEffect(() => {
     const getCategories = async () => {
-      const response = await fetch("/api/getCategories");
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/getCategories");
       const data = await response.json();
       setAllCategory([...data.categories]);
     };

@@ -27,7 +27,7 @@ export default function AdminBlog() {
     const getAllPost = async () => {
       setIsLoading(true);
       const response = await fetch(
-        `/api/get-all-post-by-admin?page=${page}&query=${query}&category=${category}`,
+        `https://blog-app-api-x1ut.onrender.com/get-all-post-by-admin?page=${page}&query=${query}&category=${category}`,
         {
           credentials: "include",
         }
@@ -43,7 +43,7 @@ export default function AdminBlog() {
   const getBlog = async () => {
     setIsLoading(true);
     const response = await fetch(
-      `/api/get-all-post-by-admin?page=${page}&query=${searchParams.get(
+      `https://blog-app-api-x1ut.onrender.com/get-all-post-by-admin?page=${page}&query=${searchParams.get(
         "query"
       )}&category=${category}`,
       {

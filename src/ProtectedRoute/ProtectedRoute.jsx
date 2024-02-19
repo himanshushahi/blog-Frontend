@@ -7,7 +7,7 @@ const useAuth = () => {
   useEffect(() => {
     const authenticateuser = async () => {
       try {
-        const response = await fetch("/api/authenticate-user");
+        const response = await fetch("https://blog-app-api-x1ut.onrender.com/authenticate-user");
         const data = await response.json();
         setIsAuth(data.success);
       } catch (error) {

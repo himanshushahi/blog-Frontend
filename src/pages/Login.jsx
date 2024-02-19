@@ -58,7 +58,7 @@ const Login= () => {
       return;
     }
     setIsLoading(true);
-    const responce = await fetch("/api/login", {
+    const responce = await fetch("https://blog-app-api-x1ut.onrender.com/login", {
       method: "POST",
       headers:{
         'Content-Type':'application/json',

@@ -14,7 +14,7 @@ const AdminNavbar = ({ onSearchClick, setSearchParams, query, category,setAddMod
 
   useEffect(() => {
     const getCategory = async () => {
-      const response = await fetch("/api/getCategories");
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/getCategories");
       const { categories } = await response.json();
       setAllCategory([...categories]);
     };
@@ -28,7 +28,7 @@ const AdminNavbar = ({ onSearchClick, setSearchParams, query, category,setAddMod
       return;
     }
     try {
-      const response = await fetch("/api/create-category", {
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/create-category", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

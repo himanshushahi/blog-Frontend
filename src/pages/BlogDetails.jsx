@@ -42,7 +42,7 @@ function BlogDetails() {
         body: JSON.stringify({ comment }), // Wrap the comment in an object with a key
       };
 
-      const response = await fetch("/api/create-comment/" + params.id, options);
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/create-comment/" + params.id, options);
       setComment("");
       const data = await response.json();
       setComments((prev) => [data.comment, ...prev]);
@@ -54,7 +54,7 @@ function BlogDetails() {
   useEffect(() => {
     async function getBlog() {
       setIsLoading(true);
-      const response = await fetch(`/api/getPost/${params.id}`);
+      const response = await fetch(`https://blog-app-api-x1ut.onrender.com/getPost/${params.id}`);
       const data = await response.json();
       if (data.success) {
         setIsLoading(false);
@@ -74,7 +74,7 @@ function BlogDetails() {
   useEffect(() => {
     async function getComments() {
       const response = await fetch(
-        `/api/get-comments/${params.id}?page=${page}`
+        `https://blog-app-api-x1ut.onrender.com/get-comments/${params.id}?page=${page}`
       );
       const commentsData = await response.json();
       const { comments } = commentsData;
@@ -98,7 +98,7 @@ function BlogDetails() {
   useEffect(() => {
     const getData = async () => {
       setSimilarLoading(true);
-      const response = await fetch("/api/get-similar-blogs/" + params.id);
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/get-similar-blogs/" + params.id);
       const data = await response.json();
       setSimilarLoading(false);
       setSimilarBlogs([...data]);

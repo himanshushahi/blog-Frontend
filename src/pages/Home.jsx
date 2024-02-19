@@ -15,7 +15,7 @@ export default function Home() {
   const [posts, setPosts] = useState([]);
   const getBlog = useCallback(async () => {
     try {
-      const responce = await fetch(`/api/get-approve-blog`);
+      const responce = await fetch(`https://blog-app-api-x1ut.onrender.com/get-approve-blog`);
       const { posts } = await responce.json();
       setIsLoading(false);
       setPosts([...posts]);

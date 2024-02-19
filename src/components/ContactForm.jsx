@@ -55,7 +55,7 @@ function ContactForm() {
 
     try {
       setIsLoading(true)
-      const response = await fetch('/api/send-message',{method:'POST',credentials:'include',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      const response = await fetch('https://blog-app-api-x1ut.onrender.com/send-message',{method:'POST',credentials:'include',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       const {success,message} = await response.json();
       setIsLoading(false);
       if(success){

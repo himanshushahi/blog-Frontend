@@ -20,7 +20,7 @@ const AdminLogin = () => {
 
     // Assuming you have a function to make an API request
     try {
-      const response = await fetch('/api/admin-login', {
+      const response = await fetch('https://blog-app-api-x1ut.onrender.com/admin-login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

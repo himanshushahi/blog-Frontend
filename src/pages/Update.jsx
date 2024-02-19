@@ -28,7 +28,7 @@ export default function Update() {
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
-      const response = await fetch("/api/get-edit-data/" + params.id, {
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/get-edit-data/" + params.id, {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export default function Update() {
         }),
       };
       setUpdateLoading(true);
-      const res = await fetch("/api/update-blog/" + params.id, options);
+      const res = await fetch("https://blog-app-api-x1ut.onrender.com/update-blog/" + params.id, options);
 
       const data = await res.json();
       setUpdateLoading(false);

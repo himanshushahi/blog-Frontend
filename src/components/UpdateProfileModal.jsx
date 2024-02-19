@@ -24,7 +24,7 @@ function UpdateProfileModal({ name: username, onClose, setData }) {
     }
 
     try {
-      const response = await fetch("/api/verify-and-change-password", {
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/verify-and-change-password", {
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
@@ -47,7 +47,7 @@ function UpdateProfileModal({ name: username, onClose, setData }) {
   const sendOtp = async () => {
     try {
       setPasswordChangeVisible(true);
-      const response = await fetch("/api/change-password-otp", {
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/change-password-otp", {
         credentials: "include",
       });
       const data = await response.json();
@@ -72,7 +72,7 @@ function UpdateProfileModal({ name: username, onClose, setData }) {
     try {
       setData((prev) => ({ ...prev, user: { ...prev.user, name: name } }));
       toast.success("Name Updated Successfully");
-      const response = await fetch("/api/update-name", {
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/update-name", {
         method: "POST",
         credentials: "include",
         headers: {

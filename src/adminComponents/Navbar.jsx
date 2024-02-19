@@ -8,7 +8,7 @@ function Navbar() {
   const { setAdminLogin } = useContext(AdminContext);
 
   const logoutAdmin = async () => {
-    const response = await fetch('/api/admin-logout', { method: 'POST' });
+    const response = await fetch('https://blog-app-api-x1ut.onrender.com/admin-logout', { method: 'POST' });
     if (response.ok) {
       setAdminLogin(false);
       navigate('/admin-login');

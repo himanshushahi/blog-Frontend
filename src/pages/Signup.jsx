@@ -58,7 +58,7 @@ const Signup = () => {
 
     try {
       setSendOtpLoading(true);
-      const response = await fetch('/api/send-otp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:data.email})});
+      const response = await fetch('https://blog-app-api-x1ut.onrender.com/send-otp',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:data.email})});
       const {success,message} = await response.json();
       setSendOtpLoading(false);
       if(success){
@@ -178,7 +178,7 @@ const Signup = () => {
       return;
     }
     setIsLoading(true);
-    const responce = await fetch("/api/register", {
+    const responce = await fetch("https://blog-app-api-x1ut.onrender.com/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

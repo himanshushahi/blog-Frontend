@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [pathname]);
 
   const logoutUser = async () => {
-    const response = await fetch("/api/logout", { method: "POST" });
+    const response = await fetch("https://blog-app-api-x1ut.onrender.com/logout", { method: "POST" });
     if (response.ok) {
       setIsLogin(false);
       navigate("/", { replace: true });

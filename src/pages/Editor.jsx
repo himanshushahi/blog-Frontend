@@ -22,7 +22,7 @@ export default function PlayGround({ id, onClose, onAdd,onUpdate }) {
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
-      const response = await fetch("/api/get-edit-data/" + id, {
+      const response = await fetch("https://blog-app-api-x1ut.onrender.com/get-edit-data/" + id, {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ export default function PlayGround({ id, onClose, onAdd,onUpdate }) {
   useEffect(() => {
     async function getCat() {
       try {
-        const response = await fetch("/api/getCategories");
+        const response = await fetch("https://blog-app-api-x1ut.onrender.com/getCategories");
         const data = await response.json();
         setAllCategory([...data.categories]);
       } catch (error) {
@@ -131,7 +131,7 @@ export default function PlayGround({ id, onClose, onAdd,onUpdate }) {
             editorState: editorState,
           }),
         };
-        const res = await fetch("/api/update-blog/" + id, options);
+        const res = await fetch("https://blog-app-api-x1ut.onrender.com/update-blog/" + id, options);
 
         const data = await res.json();
         if (data.success) {
@@ -154,7 +154,7 @@ export default function PlayGround({ id, onClose, onAdd,onUpdate }) {
       }
     } else {
       try {
-        const response = await fetch("/api/create-post", {
+        const response = await fetch("https://blog-app-api-x1ut.onrender.com/create-post", {
           method: "POST",
           credentials: "include",
           headers: {

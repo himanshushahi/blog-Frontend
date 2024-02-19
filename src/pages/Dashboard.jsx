@@ -7,7 +7,6 @@ import {
   FaUserAlt,
 } from "react-icons/fa"; // Import the three dots React-icon
 import { MdOutlineCancel } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
 import UserCard from "../components/UserCard";
 import CardSkeleton from "../sckeleton/CardSkeleton";
 import ProfileCardSkeleton from "../sckeleton/ProfileCardSkeleton";
@@ -24,7 +23,7 @@ function Dashboard() {
   useEffect(() => {
     const getData = async () => {
       setIsLoading(true);
-      const response = await fetch(`/api/getUserData`, {
+      const response = await fetch(`https://blog-app-api-x1ut.onrender.com/getUserData`, {
         credentials: "include",
       });
       const data = await response.json();
@@ -157,7 +156,7 @@ function Dashboard() {
                 ...prev,
                 user: {
                   ...prev.user,
-                  posts: [...prev.user.posts, data],
+                  posts: [...prev.user.post, data],
                 },
               }))
             }

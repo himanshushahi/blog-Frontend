@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     const authenticateuser = async () => {
       try {
-        const response = await fetch("/api/authenticate-user");
+        const response = await fetch("https://blog-app-api-x1ut.onrender.com/authenticate-user");
         const data = await response.json();
         setIsLogin(data.success);
       } catch (error) {
@@ -44,7 +44,7 @@ function App() {
 
     const authenticateAdmin = async () => {
       try {
-        const response = await fetch("/api/authenticate-admin");
+        const response = await fetch("https://blog-app-api-x1ut.onrender.com/authenticate-admin");
         const data = await response.json();
         setAdminLogin(data.success);
       } catch (error) {
